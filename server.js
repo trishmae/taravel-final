@@ -127,7 +127,7 @@ async function saveToCache(sourceCoordinates, destCoordinates, algResults) {
 async function getFromDatabase(sourceCoordinates, destCoordinates) {
   return new Promise((resolve, reject) => {
     db.get(
-      "SELECT algResults FROM genetic_data2 WHERE sourceCoordinates = ? AND destCoordinates = ?",
+      "SELECT algResults FROM genetic_data WHERE sourceCoordinates = ? AND destCoordinates = ?",
       [JSON.stringify(sourceCoordinates), JSON.stringify(destCoordinates)],
       (err, row) => {
         if (err) {
@@ -143,7 +143,7 @@ async function getFromDatabase(sourceCoordinates, destCoordinates) {
 async function saveToDatabase(sourceCoordinates, destCoordinates, algResults) {
   return new Promise((resolve, reject) => {
     db.run(
-      "INSERT INTO genetic_data2 (sourceCoordinates, destCoordinates, algResults) VALUES (?, ?, ?)",
+      "INSERT INTO genetic_data (sourceCoordinates, destCoordinates, algResults) VALUES (?, ?, ?)",
       [
         JSON.stringify(sourceCoordinates),
         JSON.stringify(destCoordinates),
@@ -163,7 +163,7 @@ async function saveToDatabase(sourceCoordinates, destCoordinates, algResults) {
 async function deleteFromDatabase(sourceCoordinates, destCoordinates) {
   return new Promise((resolve, reject) => {
     db.run(
-      "DELETE FROM genetic_data2 WHERE sourceCoordinates = ? AND destCoordinates = ?",
+      "DELETE FROM genetic_data WHERE sourceCoordinates = ? AND destCoordinates = ?",
       [JSON.stringify(sourceCoordinates), JSON.stringify(destCoordinates)],
       function (err) {
         if (err) {
