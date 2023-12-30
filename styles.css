@@ -59,10 +59,12 @@ h2 {
 }
 
 .sidenav-header nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: inline-block;
+  /* justify-content: space-around; */
+  /* align-items: center; */
   margin-left: auto;
+  padding-right: 30px;
+  padding-top: 10px;
 }
 
 .sidenav-header ul {
