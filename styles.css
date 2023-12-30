@@ -24,42 +24,6 @@ h2 {
     margin: 10px 0;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #ffd143;
-  color: #fff;
-  height: 70px;
-}
-
-.navbar ul {
-  display: flex;
-}
-
-.navbar .container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* h1.logo {
-  padding-right: 100px;
-} */
-
-.navbar a {
-  color: #fff;
-  padding: 10px;
-  margin: 0 5px;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  border-bottom: 2px #fff solid;
-}
-
-.navbar .flex {
-  justify-content: space-around;
-}
-
 .get-direction {
   background-color: #ffd143;
   color: white;
