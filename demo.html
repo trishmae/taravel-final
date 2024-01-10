@@ -93,15 +93,72 @@
           </svg>
         </div>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <input type="text" class="form-control" placeholder="Starting Point" id="source" required />
       </div>
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Destination" id="dest" required />
+      </div> -->
+      <div class="dropdown">
+        <div class="dropdown-content" id="sourceOptions">
+          Starting Point: <br>
+          <select id="brgySource" onchange="updateSourceOptions()">
+            <option value="" disabled selected>Select a Barangay</option>
+            <option value="Salawag">Salawag</option>
+            <option value="Paliparan III">Paliparan III</option>
+            <option value="Paliparan II">Paliiparan II</option>
+            <option value="Sampaloc IV">Sampaloc IV</option>
+            <option value="Sampaloc I">Sampaloc I</option>
+            <option value="San Agustin II">San Agustin II</option>
+            <option value="Zone IV">Zone IV</option>
+            <option value="Burol">Burol</option>
+            <option value="Burol III">Burol III</option>
+            <option value="Salitran">Salitran</option>
+            <option value="Area 1">Area 1</option>
+            <option value="Area C">Area C</option>
+            <option value="Area D">Area D</option>
+            <option value="Area E">Area E</option>
+            <option value="Area F">Area F</option>
+            <option value="Area G">Area G</option>
+          </select>
+          <select class="place" id="placeSource">
+            <option value="" disabled selected>Select a Place</option>
+            <!-- <option value="place1">Place 1</option>
+            <option value="place2">Place 2</option>
+            <option value="place3">Place 3</option> -->
+          </select>
+        </div>
+        <div class="dropdown-content" id="destOptions">
+          Destination: <br>
+          <select id="brgyDest" onchange="updateDestOptions()">
+            <option value="" disabled selected>Select a Barangay</option>
+            <option value="Salawag">Salawag</option>
+            <option value="Paliparan III">Paliparan III</option>
+            <option value="Paliparan II">Paliiparan II</option>
+            <option value="Sampaloc IV">Sampaloc IV</option>
+            <option value="Sampaloc I">Sampaloc I</option>
+            <option value="San Agustin II">San Agustin II</option>
+            <option value="Zone IV">Zone IV</option>
+            <option value="Burol">Burol</option>
+            <option value="Burol III">Burol III</option>
+            <option value="Salitran">Salitran</option>
+            <option value="Area 1">Area 1</option>
+            <option value="Area C">Area C</option>
+            <option value="Area D">Area D</option>
+            <option value="Area E">Area E</option>
+            <option value="Area F">Area F</option>
+            <option value="Area G">Area G</option>
+          </select>
+          <select class="place" id="placeDest">
+            <option value="" disabled selected>Select a Place</option>
+          </select>      
+        </div>
       </div>
-      <button onclick="checkSourceAndDest()" class="get-direction button-on hover-shadow">
+      <div>
+        <button onclick="checkSourceAndDest2()" class="get-direction button-on hover-shadow">
         Calculate Route
-      </button>
+        </button>
+      </div>
 
       <div id="routes-container"></div>
       <h2 style="display: none; margin-top: 10px; margin-bottom: 20px" id="commutesText">

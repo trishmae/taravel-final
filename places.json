@@ -1,0 +1,17 @@
+[
+    {
+        "brgy": "Salawag",
+        "place": "Avida Santa Cecilia",
+        "coordinates": { "lat": 14.331456959334234, "lng": 120.98819091373844 }
+    },
+    {
+        "brgy": "Paliparan III",
+        "place": "Barzaga Compound",
+        "coordinates": { "lat": 14.3250603, "lng": 120.9453688 }
+    },
+    {
+        "brgy": "Sampaloc I",
+        "place": "SM Dasma",
+        "coordinates": { "lat": 14.3250603, "lng": 120.9453688 }
+    }
+]  

@@ -379,6 +379,9 @@ function evaluate(individual, type) {
 }
 
 async function runGeneticAlgorithm() {
+
+  console.log("S", sourceCoordinates);
+  console.log("D", destCoordinates);
     
   if (!sourceCoordinates || !destCoordinates) {
     alert('Please enter both starting point and destination.');
@@ -590,5 +593,155 @@ function updateRouteDetails(type) {
     const totalTime = Math.round((details.totalDistance / 30) * 60);
     document.getElementById("totalTime").innerText = `${totalTime} minutes`;
     document.getElementById("routeDetailsContainer").style.display = "flex";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  fetchBarangays(); // Initialize barangays
+});
+
+function updateSourceOptions() {
+  var brgySelect = document.getElementById('brgySource');
+  var placeSelect = document.getElementById('placeSource');
+  var selectedBrgy = brgySelect.value;
+
+  // Clear existing options
+  placeSelect.innerHTML = '<option value="" disabled selected>Select a Source Place</option>';
+
+  // Fetch data based on the selected barangay
+  fetchData('places.json')
+      .then(data => {
+          console.log('Fetched data:', data);
+
+          // Filter places based on the selected barangay
+          const filteredPlaces = data.filter(place => place.brgy === selectedBrgy);
+
+          console.log("Selected Brgy for Source", selectedBrgy);
+          console.log("Filtered Places for Source", filteredPlaces);
+
+          // Check if there are any filtered places
+          if (filteredPlaces.length > 0) {
+              // Add new options based on the fetched data
+              filteredPlaces.forEach(item => {
+                  console.log("Place selected for Source:", item.place, item.coordinates);
+                  addOption(placeSelect, item.place, selectedBrgy, item.coordinates);
+              });
+          } else {
+              console.log("No places found for the selected source barangay.");
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
+}
+
+function updateDestOptions() {
+  var brgySelect = document.getElementById('brgyDest');
+  var placeSelect = document.getElementById('placeDest');
+  var selectedBrgy = brgySelect.value;
+
+  // Clear existing options
+  placeSelect.innerHTML = '<option value="" disabled selected>Select a Destination Place</option>';
+
+  // Fetch data based on the selected barangay
+  fetchData('places.json')
+      .then(data => {
+          console.log('Fetched data:', data);
+
+          // Filter places based on the selected barangay
+          const filteredPlaces = data.filter(place => place.brgy === selectedBrgy);
+
+          console.log("Selected Brgy for Destination", selectedBrgy);
+          console.log("Filtered Places for Destination", filteredPlaces);
+
+          // Check if there are any filtered places
+          if (filteredPlaces.length > 0) {
+              // Add new options based on the fetched data
+              filteredPlaces.forEach(item => {
+                  console.log("Place selected for Destination:", item.place, item.coordinates);
+                  addOption(placeSelect, item.place, selectedBrgy, item.coordinates);
+              });
+          } else {
+              console.log("No places found for the selected destination barangay.");
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
+}
+
+function addOption(selectElement, text, barangay, coordinates) {
+  var option = document.createElement('option');
+  console.log("Option Text", text);
+
+  // Convert the coordinates object to a string (stringify)
+  const coordinatesString = JSON.stringify(coordinates);
+
+  option.text = text;
+  option.value = coordinatesString;
+  option.setAttribute('data-barangay', barangay); // Set a data attribute for barangay
+  selectElement.add(option);
+  console.log("Option coordinates", coordinatesString, option.value);
+}
+
+function fetchBarangays() {
+  fetchData('barangays.json')
+      .then(data => {
+          console.log('Fetched barangays:', data);
+
+          var brgySourceSelect = document.getElementById('brgySource');
+          var brgyDestSelect = document.getElementById('brgyDest');
+
+          // Add options for source barangay
+          data.forEach(item => {
+              addOption(brgySourceSelect, item.brgy, item.brgy, {});
+          });
+
+          // Add options for destination barangay
+          data.forEach(item => {
+              addOption(brgyDestSelect, item.brgy, item.brgy, {});
+          });
+
+          // Update source and destination options based on the default source barangay
+          updateSourceOptions();
+          updateDestOptions();
+      })
+      .catch(error => {
+          console.error('Error fetching barangay data:', error);
+      });
+}
+
+function fetchData(fileName) {
+  // Simulate fetching data from an API
+  return fetch(fileName)
+      .then(response => response.json())
+      .then(data => data)
+      .catch(error => {
+          throw new Error('Error fetching data: ' + error);
+      });
+}
+
+function checkSourceAndDest2() {
+  var sourceValue = document.getElementById('placeSource').value;
+  var destValue = document.getElementById('placeDest').value;
+
+  console.log("Source Value", sourceValue);
+  console.log(sourceValue);
+
+  // Example of parsing the coordinates back to an object
+  // var selectedOption = placeSourceSelect.options[placeSourceSelect.selectedIndex];
+  sourceCoordinates = JSON.parse(sourceValue);
+  console.log("Source Parsed Coordinates", sourceCoordinates);
+  destCoordinates = JSON.parse(destValue);
+  console.log("Dest Parsed Coordinates", destCoordinates);
+
+
+
+  // runGeneticAlgorithm();
+  // Check if source and destination are the same
+  if (sourceCoordinates === destCoordinates) {
+    alert("Start Location and Destination cannot be the same");
+  } else {
+    runGeneticAlgorithm();
   }
 }
