@@ -724,9 +724,9 @@ function fetchData(fileName) {
 function checkSourceAndDest2() {
   var sourceValue = document.getElementById('placeSource').value;
   var destValue = document.getElementById('placeDest').value;
-
+  
   console.log("Source Value", sourceValue);
-  console.log(sourceValue);
+  console.log("Dest Value", destValue);
 
   // Example of parsing the coordinates back to an object
   // var selectedOption = placeSourceSelect.options[placeSourceSelect.selectedIndex];
@@ -735,13 +735,11 @@ function checkSourceAndDest2() {
   destCoordinates = JSON.parse(destValue);
   console.log("Dest Parsed Coordinates", destCoordinates);
 
-
-
-  // runGeneticAlgorithm();
   // Check if source and destination are the same
-  if (sourceCoordinates === destCoordinates) {
+  if (sourceValue == destValue) {
     alert("Start Location and Destination cannot be the same");
   } else {
+    console.log("Run genetic")
     runGeneticAlgorithm();
   }
 }
