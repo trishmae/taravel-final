@@ -130,6 +130,42 @@ h2 {
   width: 100% !important;
 }
 
+/* dropdown style */
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  background-color: #ffffff;
+  min-width: 200px;
+  padding: 10px;
+}
+
+/* Dropdown options */
+.dropdown-content select {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Change color of dropdown options on hover */
+.dropdown-content select:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown content when the dropdown button is hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* Rest of your CSS styles... */
 
 
