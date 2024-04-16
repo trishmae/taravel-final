@@ -13,6 +13,17 @@ body {
     box-sizing: border-box;
 }
 
+ul {
+    list-style-type: none;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
 .get-direction {
     background-color: #ffd143;
     color: white;
@@ -45,6 +56,33 @@ body {
     flex-direction: row;
     align-items: center;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidenav-header nav {
+    display: inline-block;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    margin-left: auto;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.sidenav-header ul {
+    display: flex;
+}
+  
+.sidenav-header a {
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    text-shadow: 1px 1px 10px #313135;
+}
+  
+.sidenav-header a:hover {
+    font-weight: bold;
+    /* border-bottom: 2px #fff solid; */
 }
 
 .nav-title {
