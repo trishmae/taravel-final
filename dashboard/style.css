@@ -88,7 +88,7 @@ h2 {
 .nav-title {
     padding-right: 20px;
     font-size: 3rem;
-    margin-left: 3rem;
+    margin-left: 1rem;
     text-decoration: none;
     /* Remove underline */
     color: white;
@@ -420,3 +420,10 @@ a.dashboard:hover {
     margin-top: 10px;
     margin-left: -2px;
 }
+
+#logo1{
+    width: 50px;
+    padding: 0 3px;
+    padding-left: 15px;
+    display:flex;
+  }

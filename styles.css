@@ -88,7 +88,7 @@ h2 {
 .nav-title {
   padding-right: 20px;
   font-size: 3rem;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 .toggle-button {
   cursor: pointer;
@@ -437,3 +437,147 @@ a.dashboard:hover{
   transition: color 0.3s ease;
 }
 
+.aboutPage{
+  margin-top:70px;
+  padding-top: 30px;
+  height: 30vw;
+  background-color: #ffd143;
+  text-align: center;
+  color: white;
+  font-size: 4.5rem !important;
+  font-weight: bold;
+}
+
+
+.aboutInfo {
+  background-color: white;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 70vw;
+  height: 48vw;
+  margin: 30px auto;
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.aboutText{
+  font-size: 1vw;
+  font-weight: normal;
+  padding: 40px 70px;
+  text-align: justify;
+}
+
+#dasmaMap{
+  height: 23vw;
+  border-radius: 20px;
+}
+
+.aboutBrgy {
+  margin: 50px;
+  padding: 20px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 1vw;
+}
+
+.aboutBrgy p {
+  margin-bottom: 10px;
+}
+
+.aboutBrgy ul {
+  margin-bottom: 10px;
+  columns: 3;
+}
+
+.aboutBrgy ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+  break-inside: avoid-column;
+}
+
+.aboutFeatures{
+  margin-top:70px;
+  padding-top: 30px;
+  height: 40vw;
+  background-color: #ffd143;
+  text-align: left;
+  color: white;
+  padding: 30px;
+}
+
+.aboutFeatures p{
+  font-weight: normal;
+  font-size: 1vw;
+  margin-left: 30px;
+}
+
+.aboutFeatureStyle{
+  background-color: white;
+  text-align: left;
+  color: black;
+  margin: 20px;
+  padding: 20px;
+}
+
+.aboutDemo{
+  padding: 50px;
+  color:black;
+}
+
+.aboutDemo a{
+  background-color: #ffd143;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  border: #ffd143;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+.aboutDemo p {
+  font-size: 0.8vw;
+  font-weight: normal;
+}
+
+#aboutLast{
+  color: black;
+  font-weight: normal;
+  font-size: 1.3vw;
+  /* background-color: #ffd143; */
+  padding: 20px;
+}
+
+#logo{
+  width: 80px;
+  padding: 0 12px;
+  padding-left: 30px;
+  display:flex;
+}
+
+#logo1{
+  width: 50px;
+  padding: 0 3px;
+  padding-left: 15px;
+  display:flex;
+}
+
+.aboutFooter {
+  margin-top: 20px;
+  background-color: #ffd143;
+  height: 60px;
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center; /* vertically center */
+}
+
+#logoFooter {
+  width: 30px;
+  padding: 0 5px;
+}
+
+.titleFooter {
+  font-size: 2rem;
+  font-weight: normal;
+  padding-left: 10px;
+}
